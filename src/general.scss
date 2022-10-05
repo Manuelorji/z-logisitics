@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Quicksand";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.hero {
+  position: relative;
+  top: 0;
+}
+.nav {
+  position: absolute;
+}
+
+.logo {
+  width: 40px;
+}
+
+.blue-txt {
+  color: #1c9ce3;
+}
+
+.cards-slider-btns {
+  margin: 10px 20px;
+  float: right;
+  cursor: pointer;
+
+  .next-btn {
+    margin-left: 5px;
+  }
+}

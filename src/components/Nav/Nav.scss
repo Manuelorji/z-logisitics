@@ -1,0 +1,45 @@
+nav {
+  padding: 20px 40px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  display: flex;
+  background: transparent;
+  align-items: center;
+  justify-content: space-between;
+
+  .nav-components {
+    display: flex;
+    justify-content: space-around;
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin-right: 80px;
+
+      .nav-link {
+        margin-left: 60px;
+        color: #fff;
+      }
+    }
+    .user-details {
+      .sign-up {
+        margin-left: 15px;
+        padding: 15px 25px;
+        border-radius: 10px;
+        border-color: #1c9ce3;
+        outline: none;
+        border: none;
+
+        background: #1c9ce3;
+        color: #fff;
+      }
+      .login {
+        margin-left: 15px;
+        background: transparent;
+        border-radius: 10px;
+        padding: 15px 25px;
+        color: #fff;
+        border: 1px solid #1c9ce3;
+      }
+    }
+  }
+}
