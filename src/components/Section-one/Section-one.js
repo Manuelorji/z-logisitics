@@ -65,51 +65,6 @@ export default function SectionOne() {
     )),
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const goToPrevious = () => {
-    const isFirstSlide = currentIndex;
-    const newIndex = isFirstSlide ? allCards.length - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
-  };
-  const goToNext = () => {
-    const isLastSlide = currentIndex === allCards.length - 1;
-    const newIndex = isLastSlide ? 0 : currentIndex + 1;
-    setCurrentIndex(newIndex);
-  };
-
-  // const [width, setWidth] = useState(0);
-  // const cardsRef = useRef();
-
-  // let index = 0;
-
-  // const moveSlider = (direction) => {
-  //   if (direction === "right") {
-  //     if (
-  //       cardsRef.current.offsetWidth * index >=
-  //       cardsRef.current.scrollWidth
-  //     ) {
-  //       index = 0;
-  //     } else {
-  //       index++;
-  //     }
-  //   }
-  //   if (direction === "left") {
-  //     if (index === 0) {
-  //       index = 0;
-  //     } else {
-  //       index--;
-  //     }
-  //   }
-  //   allCards.current.style.transform = `translateX(-${
-  //     cardsRef.current.offsetWidth * index
-  //   }px)`;
-  // };
-
-  // useEffect(() => {
-  //   setWidth(cardsRef.current.scrollWidth - cardsRef.current.offsetWidth);
-  // }, []);
-
   return (
     <div className="section-one">
       <h1>
@@ -122,14 +77,12 @@ export default function SectionOne() {
           src={PrevBtn}
           alt={"prev"}
           // onClick={() => moveSlider("left")}
-          // onClick={goToPrevious}
         />
         <img
           className="next-btn"
           src={NextBtn}
           alt={"next"}
           // onClick={() => moveSlider("right")}
-          // onClick={goToNext}
         />
       </div>
     </div>

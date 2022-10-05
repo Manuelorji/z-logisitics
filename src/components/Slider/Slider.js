@@ -1,14 +1,16 @@
-import { useState } from "react";
+import { useRef } from "react";
 import NextBtn from "../Section-three/next.svg";
 import PrevBtn from "../Section-three/prev.svg";
 import "./Slider.scss";
 
-export default function Slider({ cards }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+export default function Slider({ children, cards }) {
+  const sliderRef = useRef();
 
-  //tech blogs slider
+  let currentIndex = 0;
 
-  function slide(direction) {
+  //slide
+
+  const slide = (direction) => {
     if (direction === "right") {
       if (currentIndex !== cards.length - 1) {
         currentIndex++;
@@ -22,34 +24,16 @@ export default function Slider({ cards }) {
         currentIndex = cards.length - 1;
       }
     }
-    cards.style.transform = `translateX(${-100 * currentIndex}vw)`;
-  }
+    sliderRef.style.transform = `translateX(${-32 * currentIndex}vw)`;
+  };
 
-  setInterval(() => slide("right"), 5000);
-
-  // //eventListeners
-  // arrowLeftBtn.addEventListener("click", () => {
-  //   slider("right");
-  // });
-  // arrowRightBtn.addEventListener("click", () => {
-  //   slider("left");
-  // });
-
-  // const goToPrevious = () => {
-  //   const isFirstSlide = currentIndex === 0;
-  //   const newIndex = isFirstSlide ? cards.length - 1 : currentIndex - 1;
-  //   setCurrentIndex(newIndex);
-  // };
-
-  // const goToNext = () => {
-  //   const isLastSlide = currentIndex === cards.length - 1;
-  //   const newIndex = isLastSlide ? 0 : currentIndex + 1;
-  //   setCurrentIndex(newIndex);
-  // };
+  // setInterval(() => slide("right"), 5000);
 
   return (
-    <div>
-      <div className="cards"> {cards}</div>
+    <div className="container">
+      <div className="cards" ref={sliderRef}>
+        {children}
+      </div>
       <div className="cards-slider-btns">
         <img
           className="prev-btn"
@@ -58,7 +42,6 @@ export default function Slider({ cards }) {
           onClick={() => {
             slide("left");
           }}
-          // onClick={goToPrevious}
         />
         <img
           className="next-btn"
@@ -67,7 +50,6 @@ export default function Slider({ cards }) {
           onClick={() => {
             slide("right");
           }}
-          // onClick={goToNext}
         />
       </div>
     </div>

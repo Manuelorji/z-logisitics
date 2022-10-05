@@ -3,8 +3,7 @@ import Merlly from "./merlly.png";
 import Kryckowik from "./Kryckowik.png";
 import Slider from "../Slider/Slider";
 import Accordion from "../Accordion/Accordion";
-
-import { useState } from "react";
+import Card from "../Card/Card";
 
 import "./Section-three.scss";
 
@@ -70,21 +69,6 @@ export default function SectionThree() {
     },
   ];
 
-  const cards = [
-    cardsData.map((data, i) => {
-      return (
-        <div key={i} className="card">
-          <img src={data.image} alt={data.detailsHeader} />
-          <div className="card-details">
-            <p className="details-paragraph">{data.detailsParagraph}</p>
-            <span className="details-header">{data.detailsHeader}</span>
-            <br />
-          </div>
-        </div>
-      );
-    }),
-  ];
-
   return (
     <div className="section-three">
       <h4 className="blue-txt">Testimonial</h4>
@@ -93,98 +77,15 @@ export default function SectionThree() {
         Our clients do say we are the best and keep finding ways to improve
         their experiences
       </p>
-      <Slider cards={cards} />
-
-      {/* <div className="card">
-          <img src={Merlly} alt={"Merlly collback"} />
-          <div className="card-details">
-            <p className="details-paragraph">
-              I got my parcel not too long ago and i’m really happy about it.
-            </p>
-            <span className="details-header">Merlly collback</span>
-            <br />
-          </div>
-        </div>
-        <div className="card">
-          <img src={Kryckowik} alt={"kryckowik blacz"} />
-          <div className="card-details">
-            <p className="details-paragraph">
-              I really like the live tracking option, i can easily track my
-              parcel. Atleast i don’t have to worry
-            </p>
-            <span className="details-header">kryckowik blacz</span>
-            <br />
-          </div>
-        </div> */}
+      <Slider cards={cardsData}>
+        {cardsData.map((data, i) => {
+          <Card key={i} data={data} />;
+        })}
+      </Slider>
 
       <div className="more-info">
         <div className="more-info-accordions">
           <Accordion accordionData={accordionData} />
-
-          {/* <div className="accordion">
-            <div className="title">
-              <h4>How long do i have to wait to get my parcel?</h4>
-              <img
-                src={AccordionBtn}
-                alt={"accordion-btn"}
-                className="accordion-btn"
-              />
-            </div>
-            <div className="detail">
-              <p>
-                Sign up with your email or phone number and start enjoying our
-                services wealso have discounts for new users.
-              </p>
-            </div>
-          </div>
-          <div className="accordion">
-            <div className="title">
-              <h4>How do i get discounts?</h4>
-              <img
-                src={AccordionBtn}
-                alt={"accordion-btn"}
-                className="accordion-btn"
-              />
-            </div>
-            <div className="detail">
-              <p>
-                Sign up with your email or phone number and start enjoying our
-                services wealso have discounts for new users.
-              </p>
-            </div>
-          </div>
-          <div className="accordion">
-            <div className="title">
-              <h4>Do you offer cross-country pickup?</h4>
-              <img
-                src={AccordionBtn}
-                alt={"accordion-btn"}
-                className="accordion-btn"
-              />
-            </div>
-            <div hidden className="detail">
-              <p>
-                Sign up with your email or phone number and start enjoying our
-                services wealso have discounts for new users.
-              </p>
-            </div>
-          </div>
-          <div className="accordion">
-            <div className="title">
-              <h4>What documents do i need to pickup?</h4>
-              <img
-                src={AccordionBtn}
-                alt={"accordion-btn"}
-                className="accordion-btn"
-              />
-            </div>
-            <div hidden className="detail">
-              <p>
-                Sign up with your email or phone number and start enjoying our
-                services wealso have discounts for new users.
-              </p>
-            </div>
-          </div> */}
         </div>
         <div className="more-info-contact">
           <h1>
