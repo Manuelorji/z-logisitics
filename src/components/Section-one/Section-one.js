@@ -4,8 +4,8 @@ import ContainerImage from "./container.jpg";
 import TrailerImage from "./trailer.jpg";
 import NextBtn from "./next.svg";
 import PrevBtn from "./prev.svg";
-import Slider from "../Slider/Slider";
-import { useRef, useState, useEffect } from "react";
+// import Slider from "../Slider/Slider";
+// import { useRef, useState, useEffect } from "react";
 
 export default function SectionOne() {
   const cards = [
