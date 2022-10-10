@@ -78,9 +78,9 @@ export default function SectionThree() {
         their experiences
       </p>
       <Slider cards={cardsData}>
-        {cardsData.map((data, i) => {
-          <Card key={i} data={data} />;
-        })}
+        {cardsData.map((data, i) => (
+          <Card key={i} data={data} />
+        ))}
       </Slider>
 
       <div className="more-info">

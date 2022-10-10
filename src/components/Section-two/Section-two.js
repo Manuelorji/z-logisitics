@@ -65,7 +65,7 @@ export default function SectionTwo() {
             <span>
               Want to learn more? <span className="bold">Click here</span>
             </span>{" "}
-            <img src={ArrowBtn} />
+            <img src={ArrowBtn} alt={"arrow-btn"} />
           </span>
         </div>
       </div>
